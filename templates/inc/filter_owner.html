@@ -1,0 +1,21 @@
+{% load static %}
+
+
+{% block filterOwener %}
+{%  if request.user.groups.first.name != "visitor" %}
+  <label>Владелец</label> <br/>
+    <div>
+        <button onclick="dropDown(event);" class="menu-btn" type="button">
+            Список &#9013;
+        </button>
+        <div class="d-none shadow rounded menu left-style">
+             {% for item in owner %}
+                <label for="owner_{{ item.id }}"> <input type="checkbox" class="id_owner" id="owner_{{ item.id }}" name="owner" value="{{ item.owner }}">
+                {{ item.owner }}</label><br>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="d-none" id="overlay" onclick="hide(event)"></div>
+<br/>
+    {% endif %}
+{% endblock filterOwener %}

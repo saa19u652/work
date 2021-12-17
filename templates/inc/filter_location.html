@@ -1,0 +1,21 @@
+{% load static %}
+
+
+{% block filterLocation %}
+{%  if request.user.groups.first.name != "visitor" %}
+  <label>Место нахождение</label> <br/>
+    <div>
+        <button onclick="dropDown(event);" class="menu-btn" type="button">
+            Список &#9013;
+        </button>
+        <div class="d-none shadow rounded menu left-style">
+            {% for item in places %}
+                <label for="places_{{ item.id }}"> <input class="id_located" type="checkbox" id="places_{{ item.id }}" name="places" value="{{ item.located }}">
+                {{ item.located }}</label><br>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="d-none" id="overlay" onclick="hide(event)"></div>
+    {%  endif %}
+<br/>
+{% endblock filterLocation %}

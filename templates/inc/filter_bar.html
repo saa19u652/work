@@ -1,0 +1,33 @@
+{% load static %}
+
+
+{% block filterBar %}
+    <div class="container">
+      <h2>Фильтр</h2>
+      {% include 'inc/filter_materials.html' %}
+      {% include 'inc/filter_tech.html' %}
+      {% include 'inc/filter_location.html' %}
+      {% include 'inc/filter_owner.html' %}
+      {% include 'inc/filter_w.html' %}
+      {% include 'inc/filter_h.html' %}
+      <input class="filter" type="button" value="Применить">
+      <button type="submit" onclick="window.location.reload();">Сброс</button><br/>
+    </div>
+
+
+    <script>
+        function dropDown(event) {
+            event.target.parentElement.children[1].classList.remove("d-none");
+            document.getElementById("overlay").classList.remove("d-none");
+        }
+
+        function hide(event) {
+            var items = document.getElementsByClassName('menu');
+            for (let i = 0; i < items.length; i++) {
+                items[i].classList.add("d-none");
+            }
+            document.getElementById("overlay").classList.add("d-none");
+        }
+    </script>
+
+{% endblock filterBar %}

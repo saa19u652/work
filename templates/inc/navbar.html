@@ -1,0 +1,28 @@
+{% load static %}
+
+{% block navbar %}
+<div class="container-search">
+	<div class="row justify-content-center">
+        <div class="col-10 col-md-10 col-lg-8">
+            <div class="card-sm">
+                <div class="card-body row no-gutters align-items-center">
+                    <div class="col">
+                        <input class="form-control form-control-lg form-control-borderless" id="searchbar" type="search" placeholder="Название картины">
+                    </div>
+                    <div class="col-auto">
+                        <button class="btn btn-lg btn-dark" id="searchbar_pic" type="button">Поиск</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-2 align-self-center">
+
+            <form method="post" action="logout" class="log-out">
+                {% csrf_token %}
+                <button class="btn btn-lg btn-dark" type="submit">Выход</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock navbar %}

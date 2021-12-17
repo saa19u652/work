@@ -1,0 +1,13 @@
+{% load static %}
+
+
+{% block filterTech %}
+    <label>Техника</label> <br/>
+    <label>
+        {% for item in tech %}
+            <input type="checkbox" class="paints_id" id="paints_{{ item.id }}" name="paints" value="{{ item.paints }}">
+            <label for="paints_{{ item.id }}">{{ item.paints }}</label><br>
+        {% endfor %}
+    </label>
+    <br/>
+{% endblock filterTech %}

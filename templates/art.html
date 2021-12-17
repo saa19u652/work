@@ -1,0 +1,27 @@
+{% extends 'inc/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="card-art">
+        <h1 class="title-author"> {{ data.author }}</h1>
+        <h2 class="title-author"> {{ data.title }}</h2>
+        <p class="title-author">{{ data.year }}</p>
+        <p class="title-author">{{ data.material }}, {{ data.paints }}, {{ data.sizeW }}x{{ data.sizeH }}</p>
+    {%  if request.user.groups.first.name != "visitor" %}
+        <p class="title-author">{{ data.location }}</p>
+        <p class="title-author">{{ data.owner }}</p>
+        <p class="title-author">{{ data.comment }}</p>
+    {% endif %}
+    {%  if data.picS.url  != "" %}
+        <img class="pic-art" src="{{ data.picS.url }}"  alt="">
+    {% endif %}
+{%  if request.user.groups.first.name != "visitor" %}
+      {%  if data.picM.url  != "" %}
+        <img class="pic-art" src="{{ data.picM.url }}"  alt="">
+      {% endif %}
+      {%  if data.picL.url  != "" %}
+        <img class="pic-art" src="{{ data.picL.url }}"  alt="">
+      {% endif %}
+{% endif %}
+    </div>
+{% endblock content %}

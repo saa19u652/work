@@ -1,0 +1,11 @@
+{%  extends 'inc/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="main">
+        <div class="login">
+            <h1 class="title"> Привет! Вы на сайте моих работ!</h1>
+            <input class="login-btn" type="button" onclick="window.location.href='{% url  'overview'%}';" value="Войти" />
+        </div>
+    </div>
+{% endblock content %}

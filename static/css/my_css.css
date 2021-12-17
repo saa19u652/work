@@ -1,0 +1,361 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+body {
+	background: #F1E9D7;
+}
+
+.main {
+	background-image: url("/static/img/back.webp");
+	width: 100%;
+  	height: 100vh;
+  	background-repeat: no-repeat;
+  	background-position: center center;
+  	background-size: cover;
+  	background-attachment: fixed;
+}
+ .login {
+	 position: fixed;
+	 top: 50%;
+	 left: 50%;
+	 transform: translate(-50%, -50%);
+ }
+ .login-btn {
+	 position: fixed;
+	 left: 50%;
+	 transform: translate(-50%);
+	 padding: 5px 15px 5px 15px;
+	 border-radius: 10px;
+	 border: none;
+	 outline:none;
+	 background: lightyellow;
+ }
+
+ .title {
+     background: white;
+	 padding: 10px 15px 10px 15px;
+	 opacity: 0.7;
+     filter: alpha(Opacity=70);
+	 border-radius: 20px;
+	 color: -webkit-text;
+ }
+
+
+
+ /*
+ LOGIN
+  */
+
+.login-page {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+
+.form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+.form button:hover,.form button:active,.form button:focus {
+  background: #43A047;
+}
+
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+
+.form .message a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.container:before, .container:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.container .info {
+  margin: 50px auto;
+  text-align: center;
+}
+
+.container .info h1 {
+  margin: 0 0 15px;
+  padding: 0;
+  font-size: 36px;
+  font-weight: 300;
+  color: #1a1a1a;
+}
+
+.container .info span {
+  color: #4d4d4d;
+  font-size: 12px;
+}
+
+.container .info span a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.container .info span .fa {
+  color: #EF3B3A;
+}
+
+.form-control-borderless {
+    border: none;
+}
+
+.form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.cd-tab-filter-wrapper {
+  background-color: #ffffff;
+  z-index: 1;
+}
+
+.cd-filter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100%;
+  background: #ffffff;
+  z-index: 2;
+  transform: translateX(-100%);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cd-filter-trigger {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 60px;
+  z-index: 3;
+}
+
+.cd-main-content.is-fixed .cd-tab-filter-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.cd-main-content.is-fixed .cd-filter {
+  position: fixed;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.cd-main-content.is-fixed .cd-filter-trigger {
+  position: fixed;
+}
+
+.menu {
+    padding-top: 10px;
+    z-index: 200;
+    margin-top: 4px;
+    background-color: white;
+    position: absolute;
+}
+
+.menu-option {
+    padding: 6px 20px 6px;
+}
+
+#overlay {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+
+.text-filter {
+    width: 70px;
+    border-radius: 5px;
+	border: none;
+    box-shadow: 0 0 2px rgba(0,0,0,0.5); /* Параметры тени */
+}
+
+.row {
+    width: 100%;
+}
+
+input{
+  text-indent: 5px;
+}
+
+.fl-table {
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+.fl-table td, .fl-table th {
+    text-align: center;
+    padding: 8px;
+}
+
+.fl-table td {
+    border-right: 1px solid #f8f8f8;
+    font-size: 12px;
+}
+
+.fl-table thead th {
+    color: #ffffff;
+    background: #282a37;
+}
+
+
+.fl-table thead th:nth-child(odd) {
+    color: #ffffff;
+    background: #282a37;
+}
+
+.fl-table tr:nth-child(even) {
+    background: #F8F8F8;
+}
+
+
+
+.container-table {
+  width: 100%;
+  background-color: white;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+
+/* try removing the "hack" below to see how the table overflows the .body */
+.hack1 {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.hack2 {
+  display: table-cell;
+  width: 100%;
+  height: 100%;
+}
+
+.pic {
+    height: 100px;
+    width: 100px;
+    object-fit: contain;
+}
+
+
+#thumbwrap {
+	position:relative;
+}
+
+.thumb span {
+	position:absolute;
+	visibility:hidden;
+}
+
+.thumb:hover, .thumb:hover span {
+	visibility:visible;
+	top:-18px; left:150px;
+	z-index:1000;
+}
+
+.thumb:hover, .thumb:hover span img {
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+}
+
+.log-out {
+    margin: 0;
+}
+
+.left-style {
+    padding-left: 10px;
+}
+
+.card-art {
+    width: 50%;
+    background: white;
+    margin: 30px auto;
+    border-radius: 50px;
+	border: none;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5); /* Параметры тени */
+    padding: 20px;
+}
+
+.title-author {
+    margin: auto;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.pic-art {
+    max-width: 100%;
+    max-height: 100%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    -ms-transform: translateX(-50%); /* IE 9 */
+    -webkit-transform: translateX(-50%); /* Chrome, Safari, Opera */
+    margin: 10px 0;
+}

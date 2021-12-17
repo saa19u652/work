@@ -1,0 +1,51 @@
+<html>
+<head>
+  <title>Test</title>
+  <style>
+    body {
+      background-color: #f7f7f7;
+        margin: 0;
+        padding: 20px;
+    }
+    img {
+        width: 150px;
+        height: 150px;
+        object-fit: contain;
+    }
+    .container {
+        display: flex;
+        align-content: space-between;
+        border-bottom: #1a1a1a solid 1px;
+    }
+    p {
+        margin-left: 80px;
+        width: 100%;
+        padding-top: 1%;
+
+    }
+    .counter {
+        padding-top: 13%;
+        width: 50px;
+        margin: 0;
+
+    }
+  </style>
+</head>
+<body>
+  <h1>ТОМ 1 - Количество работ: {{ art.count }}</h1>
+  {% for elem in art %}
+      <div class="container">
+          <p class="counter">{{forloop.counter}}</p>
+        <img src="{{elem.picS}}"  alt="" width="100px" height="100px"/>
+        <p> Автор: {{elem.author}} <br/>
+            Название: {{elem.title}} <br/>
+            Год: {{elem.year}} <br/>
+            Техника: {{elem.material}}, {{elem.paints}} <br/>
+            Размеры: {{elem.sizeH}}x{{elem.sizeW}} <br/>
+            Подпись: {{elem.signature}}
+
+        </p>
+      </div>
+  {% endfor %}
+</body>
+</html>

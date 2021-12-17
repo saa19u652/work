@@ -1,0 +1,56 @@
+{% load static %}
+
+
+{% block Gallery %}
+<h2>Список</h2>
+<div class="container-table">
+
+  <div class="hack1">
+    <div class="hack2">
+    <table class="fl-table" id = "tableid">
+        <thead>
+        <tr>
+            <th>Изображение</th>
+            <th>Художник</th>
+            <th>Название</th>
+            <th>Год</th>
+            <th>Материал</th>
+            <th>Техника</th>
+            <th>Размеры</th>
+            {%  if request.user.groups.first.name != "visitor" %}
+                <th>Место нахождение</th>
+                <th>Владелец</th>
+            {% endif %}
+        </tr>
+        </thead>
+        <tbody id="tbody-gallary">
+            {% for item in data  %}
+                <tr>
+                    <td>
+                        <div id="thumbwrap">
+                            <a class="thumb" target="_blank"  href="art/{{ item.pk }}" >
+                                <img src="{{ item.picS.url }}" alt="" class="pic">
+                                <span><img src="{{ item.picS.url }}"  alt=""></span></a>
+                        </div>
+                    </td>
+                    <td>{{ item.author }}</td>
+                    <td>{{ item.title }}</td>
+                    <td>{{ item.year }}</td>
+                    <td>{{ item.material }}</td>
+                    <td>{{ item.paints }}</td>
+                    <td>{{ item.sizeW }}x{{ item.sizeH }}</td>
+                    {%  if request.user.groups.first.name != "visitor" %}
+                    <td>{{ item.location }}</td>
+                    <td>{{ item.owner }}</td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+        <tbody>
+    </table>
+</div>
+    </div>
+    </div>
+{% endblock Gallery %}
+
+{% block jscode %}
+{% endblock jscode %}

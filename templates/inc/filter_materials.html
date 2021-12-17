@@ -1,0 +1,12 @@
+{% load static %}
+
+{% block filterMaterial %}
+    <label>Материал</label> <br/>
+    <label>
+        {% for item in material %}
+            <input class="id_checkbox" type="checkbox" id="material_{{ item.id }}" name="material" value="{{ item.material }}">
+            <label for="material_{{ item.id }}">{{ item.material }}</label><br>
+        {% endfor %}
+    </label>
+    <br/>
+{% endblock filterMaterial %}
